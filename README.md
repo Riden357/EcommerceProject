@@ -1,66 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Rapport de Projet
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 1. Couverture
 
-## About Laravel
+-   **Titre** : Site Web pour l'achat d'aliments frais
+-   **Auteur** : Rigoberto Diaz Enamorado
+-   **Date** : 25/10/2024
+-   **Institution** : Teccart
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 2. Table des matières
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Résumé](#3-résumé)
+-   [Introduction](#4-introduction)
+-   [Méthodologie](#5-méthodologie)
+-   [Développement](#6-développement)
+-   [Essais](#7-essais)
+-   [Déploiement](#8-déploiement)
+-   [Conclusions](#9-conclusions)
+-   [Annexes](#annexes)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 3. Résumé
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Ce projet consiste à développer un site Web pour l'achat d'aliments frais tels que des légumes, des fruits, des viandes, et plus encore. Le système a été développé en utilisant Laravel, avec MySQL comme base de données et Bootstrap pour l'interface. Il permet aux utilisateurs de faire des achats en ligne et inclut des modules d'administration pour gérer les produits. Un système d'authentification a été implémenté avec Bootstrap UI et l'option `--auth`, permettant aux utilisateurs de s'inscrire, de se connecter, et de gérer leurs profils.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 4. Introduction
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+L'objectif de ce projet est de créer une plateforme Web permettant aux utilisateurs d'acheter des aliments frais rapidement et facilement, tout en permettant aux administrateurs de gérer le catalogue de produits. Cette plateforme offre une solution efficace pour l'achat d'aliments en ligne, offrant une expérience utilisateur intuitive et un outil de gestion robuste pour les opérateurs du site.
 
-## Laravel Sponsors
+## 5. Méthodologie
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+**Outils :**
 
-### Premium Partners
+-   Langage de programmation : PHP 8.2.12
+-   Cadre : Laravel 10.48.22
+-   Base de données : MySQL 10.4.32-MariaDB
+-   Frontend : Bootstrap 5.3.3 pour l'interface graphique.
+-   Système d'authentification : Laravel UI v4.2.0 pour gérer l'authentification de l'utilisateur.
+-   Environnement de développement : Visual Studio Code (VSCode) 1.94.2.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+**Architecture :**
+Le projet suit l'architecture MVC (Modèle-Vue-Contrôleur) typique de Laravel :
 
-## Contributing
+-   **Modèles** : définis dans `app/Models`, représentant les principales entités telles que `Product` et `User`.
+-   **Contrôleurs** : situés dans `app/Http/Controllers`, gérant la logique métier pour les produits et utilisateurs.
+-   **Vues** : situées dans `resources/views`, pour l'interface graphique avec Bootstrap.
+-   **Database** : configuration situées dans `config/database.php`.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 6. Développement
 
-## Code of Conduct
+### Principales caractéristiques :
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. **Achats d'aliments** : Les utilisateurs inscrits peuvent naviguer dans les catégories d'aliments frais, ajouter des produits au panier et finaliser leurs achats. Le catalogue comprend des images, des prix, et des descriptions détaillées.
+2. **Gestion des produits** : Le module d'administration permet aux opérateurs de site d'ajouter, modifier, et supprimer des produits, facilitant la gestion des stocks.
+3. **Authentification de l'utilisateur** : Laravel UI avec Bootstrap `--auth` permet l'enregistrement, la connexion, et la gestion de profil pour les utilisateurs authentifiés.
+4. **Panneau d'administration** : Les administrateurs accèdent à un tableau de bord pour gérer les produits. Les opérations CRUD sont implémentées pour un contrôle complet du catalogue.
 
-## Security Vulnerabilities
+**Intégration de l'interface utilisateur Bootstrap avec --auth :**
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-   Création de formulaires pour l'inscription et la connexion des utilisateurs.
+-   Implémentation de rôles utilisateurs différenciant les administrateurs des utilisateurs réguliers.
 
-## License
+**Structure du projet :**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-   **Fichiers de configuration** : le fichier `.env` gère les connexions à la base de données, les sessions, et d'autres paramètres.
+-   **Module produits** : Les produits sont gérés par `AdminsController` dans `app/Http/Controllers/Admins/AdminsController.php`.
+-   **Vues** : Bootstrap est utilisé dans les vues pour créer une conception réactive et conviviale, optimisée pour les appareils mobiles.
+
+## 7. Essais
+
+**Tests fonctionnels :**
+
+-   Vérification du système d'authentification incluant :
+    -   Inscription de l'utilisateur.
+    -   Connexion.
+
+**Tests de module de produit :**
+
+-   Tests CRUD pour les produits :
+    -   Création de nouveaux produits.
+    -   Modification d'informations produit existantes.
+    -   Suppression de produits de l'inventaire.
+
+## 8. Déploiement
+
+Le projet s'exécute localement à l'aide de XAMPP, qui fournit Apache et MySQL. Composer a été utilisé pour la gestion des dépendances, avec un fichier `composer.json` configuré pour maintenir les bibliothèques nécessaires au bon fonctionnement de Laravel et Bootstrap.
+
+## 9. Conclusions
+
+Le système d'achat d'aliments frais atteint son objectif en fournissant une plateforme fonctionnelle pour la vente de produits alimentaires. Les modules d'authentification et de gestion des produits facilitent la gestion pour les utilisateurs et les administrateurs. L'interface créée avec Bootstrap garantit une expérience utilisateur agréable sur tous types d'appareils.
+
+---
